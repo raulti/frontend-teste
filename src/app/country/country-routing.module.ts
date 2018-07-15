@@ -8,7 +8,8 @@ const routes: Routes = [
         component: CountryComponent,
         children: [
             { path: '', redirectTo: 'country' },
-            { path: 'country', loadChildren: './home/home.module#HomeModule' }
+            { path: 'country', loadChildren: './home/home.module#HomeModule' },
+            { path: 'country/list', loadChildren: './list/list.module#ListModule' }
         ],
     }
 ];

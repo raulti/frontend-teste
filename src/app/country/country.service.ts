@@ -39,4 +39,18 @@ export class CountryService {
     return this.http.get(this.getRouter('list'));
   }
 
+  /**
+   * Disponibiliza arquivo no formato .csv para download.
+   */
+  downloadCsv(){
+    return this.http.get(this.getRouter('csv'), {responseType: 'blob'});
+  }
+
+  /**
+   * Disponibiliza arquivo no formato .xlsx para download.
+   */
+  downloadXlsx(){
+    return this.http.get(this.getRouter('xlsx'), {responseType: 'blob'});
+  }
+
 }

@@ -12,39 +12,23 @@ import { routerTransition } from '../../router.animations';
 
 export class ListComponent implements OnInit {
 
-    public contatos;
-    public contato: Contato;
+    public countrys;
 
-    constructor(private _layoutService: CountryService) {
-        this.contatos = this.contatos === undefined ? {} : this.contatos;
+    constructor(private _countryService: CountryService) {
     }
 
     ngOnInit() {
-        // this.contatos = this.getContatos();
+        this.getCountrys();
     }
 
-    // /**
-    //  * Recupera lista de contatos
-    //  */
-    // getContatos() {
-    //     this._layoutService.getContatos().subscribe(data => {
-    //         this.contatos = data;
-    //     }, error => {
-    //         alert(error);
-    //     });
-    // }
-
-    // /**
-    //  * Inativa registro da base de dados
-    //  * 
-    //  * @param id 
-    //  */
-    // excluir(id) {
-    //     this._layoutService.excluir(id).subscribe(data => {
-    //         alert('Registro inativao com sucesso');
-    //         this.getContatos();
-    //     }, error => {
-    //         alert(error);
-    //     });
-    // }
+    /**
+     * Recupera lista de países.
+     */
+    getCountrys() {
+        this._countryService.getCountrys().subscribe(data => {
+            this.countrys = data;
+        }, error => {
+            alert(error);
+        });
+    }
 }

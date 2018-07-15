@@ -1,3 +1,4 @@
+import { saveAs } from 'file-saver';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CountryService } from '../country.service';
@@ -18,5 +19,19 @@ export class HomeComponent implements OnInit {
         this.countryServive = _countryService;
     }
 
-    ngOnInit() {}
+    ngOnInit() { }
+
+    /**
+     * Recupera lista de países para download no formato .csv.
+     */
+    getCountrysCsv() {
+        this._countryService.downloadCsv().subscribe(data => saveAs(data, `coutrys.csv`));
+    }
+
+    /**
+     * Recupera lista de países para download no formato .xlsx.
+     */
+    getCountrysXlsx() {
+        this._countryService.downloadXlsx().subscribe(data => saveAs(data, `coutrys.xlsx`));
+    }
 }

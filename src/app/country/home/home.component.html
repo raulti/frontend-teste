@@ -4,16 +4,42 @@
         <div class="col col-xl-12 col-lg-12">
             <div class="card mb-12" style="border: none">
 
-                <a [routerLink]="['../list']">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem; cursor: pointer;">
-                        <div class="card-header text-center">
-                            <h5>Lista de Países</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text text-center">Acessar</p>
+                <div class="card-group">
+                    <div class="col col-xl-4 col-lg-4">
+                        <a [routerLink]="['../list']">
+                            <div class="card text-white bg-primary mb-3" style="max-width: 18rem; cursor: pointer;">
+                                <div class="card-header text-center">
+                                    <h5>Lista de Países</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text text-center">Acessar</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col col-xl-4 col-lg-4">
+                        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem; cursor: pointer;" (click)="getCountrysCsv()">
+                            <div class="card-header text-center">
+                                <h5>Lista de Países no formato .CSV</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-center">Realizar Download</p>
+                            </div>
                         </div>
                     </div>
-                </a>
+
+                    <div class="col col-xl-4 col-lg-4">
+                        <div class="card bg-light  mb-3" style="max-width: 18rem; cursor: pointer;" (click)="getCountrysXlsx()">
+                            <div class="card-header text-center">
+                                <h5>Lista de Países no formato .XLSX</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-center">Realizar Download</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
