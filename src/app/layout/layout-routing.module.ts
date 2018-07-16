@@ -6,10 +6,6 @@ const routes: Routes = [
     {
         path: '',
         component: LayoutComponent,
-        children: [
-            { path: '', redirectTo: 'contatos' },
-            { path: 'contatos', loadChildren: './contato/contato.module#ContatoModule' }
-        ],
     }
 ];
 

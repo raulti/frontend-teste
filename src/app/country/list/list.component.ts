@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CountryService, Contato } from '../country.service';
+import { CountryService } from '../country.service';
 import { routerTransition } from '../../router.animations';
 
 
@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
         this._countryService.getCountrys().subscribe(data => {
             this.countrys = data;
         }, error => {
-            alert(error);
+            alert(error.error.text);
         });
     }
 }

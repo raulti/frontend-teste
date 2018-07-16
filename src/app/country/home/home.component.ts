@@ -25,7 +25,11 @@ export class HomeComponent implements OnInit {
      * Recupera lista de países para download no formato .csv.
      */
     getCountrysCsv() {
-        this._countryService.downloadCsv().subscribe(data => saveAs(data, `coutrys.csv`));
+        this._countryService.downloadCsv().subscribe(data => {
+            saveAs(data, `coutrys.csv`)
+        }, error => {
+            alert(error.error.text);
+        });
     }
 
     /**

@@ -1,16 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-export interface Contato {
-  nome: string;
-  sobreNome: string;
-  dtNascimento:string;
-  email: string;
-  telefone: string;
-  cpf: string;
-  celular: string;
-}
-
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
 };
